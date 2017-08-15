@@ -45,4 +45,5 @@ node default {
   include role::classroom
   notify {'I made a change' : }
   include users
+  include skeleton
 }
