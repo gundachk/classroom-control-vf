@@ -43,5 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  file {
+  notify {'Test Change !!':}
+  }
   notify { 'I made a change!': }
 }
