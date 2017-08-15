@@ -48,7 +48,7 @@ node default {
 
 notify {"This is Krishna Gundachar's  File modification TEST !!" : }
 
-while { "/etc/motd" :
+file { "/etc/motd" :
 ensure => file.
 owner => root,
 group => root,
