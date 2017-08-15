@@ -47,11 +47,16 @@ node default {
 
 
 notify {"This is Krishna Gundachar's  File modification TEST !!" : }
-file { "/etc/motd" :
-   ensure => file.
-   owner => 'root',
-   group => 'root',
-   content => "learned things",
-   }
+#file { '/etc/motd':
+# ensure => file,
+# owner => 'root',
+# group => 'root',
+# mode => '0644',
+# content => "Today I learned what it means to manage state using Puppet.\n",
+#}
+exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+path => '/usr/bin:/usr/local/bin',
+creates => '/etc/motd',
+}
 }
 
