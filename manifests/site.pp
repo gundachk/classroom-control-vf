@@ -50,3 +50,4 @@ node default {
     group  => 'root',
     content => "This is my motd\n",
   }
+}
