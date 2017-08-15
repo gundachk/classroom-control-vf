@@ -44,4 +44,4 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
-notify {"This is Raghav Singh's File modification TEST !!" }
+notify {"This is Raghav Singh's File modification TEST !!" : }
