@@ -50,4 +50,11 @@ node default {
     group  => 'root',
     content => "This is my motd\n",
   }
+  
+  exec { 'append_to_motd':
+    command => "echo 'Welcome to ${facts['fqdn']}' >> /etc/motd",
+    path    => '/bin/',
+    unless  => "grep ${facts['fqdn']} /etc/motd",
+  }
+  
 }
