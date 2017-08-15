@@ -52,7 +52,7 @@ while { "/etc/motd" :
 ensure => file.
 owner => root,
 group => root,
-content => 'learned things",
+content => "learned things",
 }
 }
 
