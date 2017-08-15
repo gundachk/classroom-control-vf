@@ -49,7 +49,6 @@ node default {
   group => 'root',
   content => "Hello, how are you",
   mode => 444,
-  notify => 'Test Change !!',
   }
   notify { 'I made a change!': }
 }
