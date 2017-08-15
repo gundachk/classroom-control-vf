@@ -43,4 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  notify {'I made a change' :
+          message => 'How are you...',
+         }
 }
