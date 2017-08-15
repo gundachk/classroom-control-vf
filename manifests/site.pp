@@ -47,8 +47,6 @@ node default {
   file {'/etc/motd':
   ensure  => file,
   owner   => 'root',
-  group   => 'root',
-  mode    => '0444',
   content => "I like this class...\n",
   }  
 }
