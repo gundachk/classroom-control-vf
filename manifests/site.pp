@@ -44,4 +44,11 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify {'I made a change' : }
+  file {'/etc/motd':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0444',
+  content => "I like this class...\n",
+  }  
 }
