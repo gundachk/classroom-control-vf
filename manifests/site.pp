@@ -47,12 +47,11 @@ node default {
 
 
 notify {"This is Krishna Gundachar's  File modification TEST !!" : }
-
-file { "/etc/motd" :
-ensure => file.
-owner => root,
-group => root,
-content => "learned things",
-}
+ file { "/etc/motd" :
+   ensure => file.
+   owner => root,
+   group => root,
+   content => "learned things",
+   }
 }
 
