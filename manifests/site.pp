@@ -46,7 +46,7 @@ node default {
   notify {'I made a change' : }
   exec { 'cowsay motd' :
   command => "cowsay 'Welcome to ${facts[::fqdn]}!" > /etc/motd",
-  path    => '/usr/loca/bin',
+  path    => '/usr/local/bin',
   creates => '/etc/motd',
   }
 }
