@@ -51,6 +51,6 @@ node default {
     #content => "Puppet is the Master!!\n",
   
  #}
- notify { 'I made a change!' }
+ #notify { 'I made a change!' }
  include users
 }
