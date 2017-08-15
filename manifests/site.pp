@@ -48,7 +48,7 @@ node default {
   owner => 'root',
   group => 'root',
   content => "Hello, how are you",
-  mode => 444,
+  mode => '444',
   }
   notify { 'I made a change!': }
 }
