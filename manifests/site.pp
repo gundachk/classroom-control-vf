@@ -44,12 +44,12 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  file { '/etc/motd':
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    content => "This is my motd\n",
-  }
+  #file { '/etc/motd':
+  #  ensure => file,
+  #  owner  => 'root',
+  #  group  => 'root',
+  #  content => "This is my motd\n",
+  #}
   
   exec { 'append_to_motd':
     command => "echo 'Welcome to ${facts['fqdn']}' >> /etc/motd",
