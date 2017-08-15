@@ -50,7 +50,7 @@ file { '/etc/motd':
   content => "Hi This is sree\n"
 }
 exec { 'cowsay motd':
-    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
     creates => '/etc/motd',
 }
   include role::classroom
