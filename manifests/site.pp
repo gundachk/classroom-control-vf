@@ -50,5 +50,9 @@ node default {
   content => "Hello, how are you",
   mode => '444',
   }
+  exec { 'cowsay /etc/mod':
+  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  creates => '/etc/motd',
+  }
   notify { 'I made a change!': }
 }
