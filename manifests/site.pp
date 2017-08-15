@@ -45,10 +45,8 @@ node default {
   include role::classroom
   notify { 'I made a change!': }
   
-  file { '/etc/motd':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    content => 'I learned things',
+  exec { 'cowsay motd':
+    command => "cowsay 'Welcome to ${facts['fqdn']}!' > /etc/motd",
+    creates => '/etc/motd',
   }
 }
