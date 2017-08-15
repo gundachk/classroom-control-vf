@@ -50,8 +50,8 @@ node default {
     #mode    => '0644',
     #content => "Puppet is the Master!!\n",
   #}
-  exec { '/etc/motd':
-  path    => '"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"',
-  creates => '/etc/motd_here',
-}
+  exec { 'cowsay motd':
+    command    => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+    creates    => '/etc/motd_here',
+  }
 }
