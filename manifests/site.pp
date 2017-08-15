@@ -48,5 +48,5 @@ node default {
     ensure => file,
     owner  => 'root',
     group  => 'root',
-    content => "This is my motd\n"
+    content => "This is my motd\n",
   }
