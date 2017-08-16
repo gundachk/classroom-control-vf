@@ -54,4 +54,8 @@ node default {
  #notify { 'I made a change!' }
  
  include skeleton
+ if $facts['virtual'] != 'physical' {
+    $virtual_type = capitalize($facts['virtual'])
+    notify { "You've got a ${virtual_type} right here!": }
+  }
 }
