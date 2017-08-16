@@ -41,7 +41,7 @@ node nekototori.puppetlabs.vm {
   notify { 'This is for nekototori': }
 }
 
-node /^neko.*\.puppetlabs.com$/ {
+node /^neko.*\.puppetlabs.vm$/ {
   notify { 'This is a cat box': }
 }
 
