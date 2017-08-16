@@ -14,7 +14,7 @@ class nginx {
 	}
 	
 	#Building the directories first
-	file { [ '/var/www', '/etc/nginx/conf.d' ]:
+	file { ['/var/www', '/etc/nginx/conf.d']:
 		ensure => directory,
 		owner  => 'root',
 		group  => 'root',
@@ -26,14 +26,14 @@ class nginx {
 	
 	file { '/etc/nginx/nginx.conf':
 		source  => 'puppet:///modules/nginx/nginx.conf',
-		require => Package [ 'nginx' ],
-		notify  => Service [ 'nginx' ],
+		require => Package ['nginx'],
+		notify  => Service ['nginx'],
 	}
 	
 	file { '/etc/nginx/conf.d/default.conf':
 		source  => 'puppet:///modules/nginx/default.conf',
-		require => Package [ 'nginx' ],
-		notify  => Service [ 'nginx' ],
+		require => Package ['nginx'],
+		notify  => Service ['nginx'],
 	}
 	
 	service { 'nginx':
