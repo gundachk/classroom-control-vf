@@ -48,5 +48,4 @@ node default {
   notify {'I made a change' : }
   # include users
   include skeleton
-  include nginx
-}
+  }
