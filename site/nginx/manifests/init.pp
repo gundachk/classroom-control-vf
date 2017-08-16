@@ -21,14 +21,17 @@ class nginx {
   file { '/etc/nginx/nginx.conf':
     ensure => file,
     source => "puppet:///modules/${module_name}/nginx.conf",
+    require => Package['nginx'],
   }
   
   file { '/etc/nginx/conf.d/':
     ensure => directory,
+    require => Package['nginx'],
   }
   
   file { '/etc/nginx/conf.d/nginx.conf':
     ensure => file,
     source => "puppet:///modules/${module_name}/default.conf",
+    require => Package['nginx'],
   }
 }
