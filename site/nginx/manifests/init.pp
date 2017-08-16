@@ -18,7 +18,7 @@ class nginx {
 		ensure => directory,
 		owner  => 'root',
 		group  => 'root',
-		mode   => '0770',
+		mode   => '0775',
 	}
 	
 	#Require tells Puppet that the package comes first before the type.
