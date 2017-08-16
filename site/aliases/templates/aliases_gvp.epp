@@ -1,6 +1,0 @@
-# Person who should get root's email
-<% if $admin { %>
-root: <%= $admin -%>
-<% } else { %>
-# root
-<% } -%>
