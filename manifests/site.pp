@@ -54,5 +54,5 @@ node default {
  #notify { 'I made a change!' }
  
  include skeleton
- #include nginx
+ include nginx
 }
