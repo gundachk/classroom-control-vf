@@ -1,5 +1,5 @@
 class nginx {
-  defaults = {
+  File {
     owner => 'nginx',
     group => 'nginx',
     mode  => '0644',
@@ -20,18 +20,15 @@ class nginx {
   
   file { '/etc/nginx/nginx.conf':
     ensure => file,
-    source => "puppet:///modules/${module_name}/files/nginx.conf",
-    *      => $defaults,
+    source => "puppet:///modules/${module_name}/nginx.conf",
   }
   
   file { '/etc/nginx/conf.d/':
     ensure => directory,
-    *      => $defaults,
   }
   
   file { '/etc/nginx/conf.d/nginx.conf':
     ensure => file,
-    source => "puppet:///modules/${module_name}/files/default.conf",
-    *      => $defaults,
+    source => "puppet:///modules/${module_name}/default.conf",
   }
 }
