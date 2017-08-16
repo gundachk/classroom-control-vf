@@ -34,4 +34,15 @@ class nginx {
     source => "puppet:///modules/${module_name}/default.conf",
     require => Package['nginx'],
   }
+  
+  file { '/var/www/':
+    ensure => directory,
+  }
+  
+  file { '/var/www/index.html':
+    ensure => file,
+    source => "puppet:///modules/${module_name}/index.html",
+    require => File['/var/www/'],
+    notify => Service['nginx'],
+  }
 }
