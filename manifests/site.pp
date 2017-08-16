@@ -46,6 +46,7 @@ node default {
   include users
   include skeleton
   include memcached
+  include ngnix
   #file { '/etc/motd':
   #ensure => file,
   #owner => 'root',
