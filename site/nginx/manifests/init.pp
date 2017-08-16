@@ -1,11 +1,11 @@
-class ngnix {
+class nginx {
   File {
     owner => 'root',
     group => 'root',
     mode => '0664',
   }
   
-  package { 'ngnix':
+  package { 'nginx':
     ensure => present,
   }
   
@@ -51,7 +51,7 @@ class ngnix {
   notify => Service['nginx'],
   }
 
-  service { 'ngnix':
+  service { 'nginx':
     ensure => running,
     enable => true,
   }
