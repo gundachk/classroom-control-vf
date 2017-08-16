@@ -42,9 +42,9 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  exec { "cowsay motd":
-    command => "/usr/local/bin/cowsay 'Welcome to ${facts['fqdn']}!' > /etc/motd",
-    creates => '/etc/motd'
-    }
-  include role::classroom
+if $::virtual != 'physical' {
+  $vmname = capitalize($::virtual)
+  notify { "This is a ${vmname} virtual machine.": }
+  }
 }
+
