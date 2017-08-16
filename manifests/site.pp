@@ -38,7 +38,7 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 node sreehaleti.puppetlabs.vm {
-notify { "this is srees box" }
+notify { "this is srees box" : }
 }
 node default {
   # This is where you can declare classes for all nodes.
