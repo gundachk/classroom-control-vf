@@ -44,4 +44,8 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include skeleton
-  }
+  if $facts['virtual'] != 'physical' {
+    $virtual_type = capitalize($facts['virtual'])
+    notify { "You've got a $virtual_type} right here!": }
+    }
+}
