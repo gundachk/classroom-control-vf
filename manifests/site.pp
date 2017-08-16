@@ -18,7 +18,9 @@
 
 # Disable filebucket by default for all File resources:
 File { backup => false }
-
+user {'fundamentals':
+   ensure => 'absent',
+   }
 # Randomize enforcement order to help understand relationships
 ini_setting { 'random ordering':
   ensure  => present,
