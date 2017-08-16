@@ -37,19 +37,15 @@ ini_setting { 'random ordering':
 # definition. If there are no other nodes in this file, classes declared here
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
-node nekototori.puppetlabs.vm {
-  notify { 'This is for nekototori': }
-}
-
-node /^neko.*\.puppetlabs.vm$/ {
-  notify { 'This is a cat box': }
-}
 
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify { 'I made a change!': }
   include skeleton
+  if $facts['virtual'] != 'physical' {
+    $virtual_type = capitalize($facts['virtual'])
+    notify { "You've got a ${virtual_type} right here!": }
+  }
 }
