@@ -1,4 +1,4 @@
-class nginx {
+class ngnix {
   File {
     owner => 'root',
     group => 'root',
