@@ -26,7 +26,7 @@ class nginx {
   # Notify tells Puppet that if this resource changes, it needs to reload the service in this case.
   #
   file { '/etc/nginx/nginx.conf':
-    source  => 'puppet://modules/nginx/nginx.conf',
+    source  => 'puppet:///modules/nginx/nginx.conf',
     require => Package['nginx'],
     notify  => Service['nginx'],
   }
