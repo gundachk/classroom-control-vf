@@ -92,5 +92,9 @@ support:	postmaster
 # trap decode to catch security attacks
 decode:		root
 
-# Person who should get root's mail
-#root:		marc
+# Person who should get root's email
+<% if $admin { %>
+root: <%= $admin -%>
+<% } else { %>
+# root
+<% } -%>
