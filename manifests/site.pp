@@ -49,6 +49,8 @@ node default {
   
   include skeleton
   
+  include nginx
+  
   exec {'cowsay motd' :
       command => "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
       creates => '/etc/motd'
